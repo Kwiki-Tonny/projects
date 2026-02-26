@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Simulator</title>
+    <link rel="stylesheet" href="ATM.css">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="atm-machine">
+            <!-- Login Screen -->
+            <div id="loginScreen" class="login-screen" >
+                <div class="login-card">
+                    <h2>ATM Login</h2>
+                    <div class="login-form">
+                        <input 
+                            type="text" 
+                            id="userIdInput" 
+                            placeholder="User ID" 
+                            class="login-input"
+                        >
+                        <input 
+                            type="password" 
+                            id="pinInput" 
+                            placeholder="PIN" 
+                            class="login-input"
+                        >
+                        <button id="loginBtn" class="login-button">LOGIN</button>
+                        <p class="test-users">Test Users:<br>user1/1234 | user2/5678 | user3/9999</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATM Screen (Hidden initially) -->
+            <div id="atmScreen" class="atm-screen" style="display: none;">
+                <!-- Header -->
+                <div class="atm-header">
+                    <h1>ATM SIMULATOR</h1>
+                    <p class="bank-name">UGANDA BANK</p>
+                    <p class="logged-user" id="loggedUser"></p>
+                </div>
+
+                <!-- Screen Display -->
+                <div class="screen">
+                    <div class="welcome-msg" id="welcomeMsg">
+                        WELCOME TO ATM
+                    </div>
+                    <div class="display-content" id="displayContent">
+                        <p>Select a Transaction</p>
+                    </div>
+                    <div class="balance-display" id="balanceDisplay">
+                        Balance: UgShs 0.00
+                    </div>
+                </div>
+
+                <!-- Input Section -->
+                <div class="input-section">
+                    <input 
+                        type="number" 
+                        id="amountInput" 
+                        class="amount-input" 
+                        placeholder="Enter Amount"
+                        style="display: none;"
+                    >
+                    <div class="message" id="message"></div>
+                </div>
+
+                <!-- Buttons Grid -->
+                <div class="button-grid">
+                    <!-- First Row -->
+                    <button class="atm-button menu-btn" id="checkBalanceBtn">
+                        <span class="button-label">CHECK<br>BALANCE</span>
+                    </button>
+                    <button class="atm-button menu-btn" id="depositBtn">
+                        <span class="button-label">DEPOSIT</span>
+                    </button>
+                    <button class="atm-button menu-btn" id="withdrawBtn">
+                        <span class="button-label">WITHDRAW</span>
+                    </button>
+                    <button class="atm-button menu-btn" id="logoutBtn">
+                        <span class="button-label">LOGOUT</span>
+                    </button>
+
+                    <!-- Second Row (Transaction buttons) -->
+                    <button class="atm-button action-btn" id="confirmBtn" style="display: none;">
+                        <span class="button-label">CONFIRM</span>
+                    </button>
+                    <button class="atm-button action-btn" id="cancelBtn" style="display: none;">
+                        <span class="button-label">CANCEL</span>
+                    </button>
+                    <button class="atm-button" style="visibility: hidden;"></button>
+                    <button class="atm-button" style="visibility: hidden;"></button>
+                </div>
+
+                <!-- Keypad Section -->
+                <div class="keypad">
+                    <p class="keypad-title">QUICK AMOUNTS</p>
+                    <div class="quick-amount-buttons">
+                        <button class="quick-btn" data-amount="50000">50K</button>
+                        <button class="quick-btn" data-amount="100000">100K</button>
+                        <button class="quick-btn" data-amount="500000">500K</button>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="atm-footer">
+                    <p>Keep your card safe. Do not share your PIN.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="ATM.js"></script>
+</body>
+</html>
